@@ -50,14 +50,14 @@
     <div class="container booking-box shadow">
         <div class="row g-2">
             <div class="col-md-4">
-                <input type="text" class="form-control" placeholder="Pickup Location">
+                <input type="text" class="form-control" id="pickup" placeholder="Pickup Location">
             </div>
             <div class="col-md-4">
-                <input type="text" class="form-control" placeholder="Drop Location">
+                <input type="text" class="form-control" id="drop" placeholder="Drop Location">
             </div>
             
             <div class="col-md-2">
-                <button class="btn btn-primary w-100">Book</button>
+               <button class="btn btn-primary w-100" onclick="bookRide()">Book</button>
             </div>
         </div>
     </div>
@@ -101,6 +101,22 @@
     © 2026 GoFast
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+
+
+    
+function bookRide() {
+    let pickup = document.getElementById("pickup").value.trim();
+    let drop = document.getElementById("drop").value.trim();
+
+    if (pickup === "" || drop === "") {
+        alert("Please enter both Pickup and Drop locations!");
+        return;
+    }
+
+    alert("Ride booked from " + pickup + " to " + drop + " 🚗");
+}
+</script>
+
 </body>
 </html>
